@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from parser import Parser
+from .parser import Parser
 
 
 class Summarizer:

@@ -12,4 +12,4 @@ tt = TextTeaser()
 sentences = tt.summarize(title, text)
 
 for sentence in sentences:
-  print sentence
+  print(sentence)

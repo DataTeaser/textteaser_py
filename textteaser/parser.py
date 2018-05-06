@@ -1,11 +1,16 @@
 # !/usr/bin/python
 # -*- coding: utf-8 -*-
 import nltk.data
-import os
+import os.path as path
 
 
 class Parser:
     def __init__(self):
+        self.basePath = '/'.join([
+            path.dirname(path.abspath(__file__)),
+            'trainer',
+            ''
+        ])
         self.ideal = 20.0
         self.stopWords = self.getStopWords()
 
@@ -58,7 +63,8 @@ class Parser:
         return len(matchedWords) / (len(title) * 1.0)
 
     def splitSentences(self, text):
-        tokenizer = nltk.data.load('file:' + os.path.dirname(os.path.abspath(__file__)).decode('utf-8') + '/trainer/english.pickle')
+        path = self.basePath + 'english.pickle'
+        tokenizer = nltk.data.load('file:' + path)
 
         return tokenizer.tokenize(text)
 
@@ -72,7 +78,8 @@ class Parser:
         return [word for word in words if word not in self.stopWords]
 
     def getStopWords(self):
-        with open(os.path.dirname(os.path.abspath(__file__)) + '/trainer/stopWords.txt') as file:
+        path = self.basePath + 'stopWords.txt'
+        with open(path) as file:
             words = file.readlines()
 
         return [word.replace('\n', '') for word in words]

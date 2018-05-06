@@ -1,4 +1,4 @@
-from summarizer import Summarizer
+from .summarizer import Summarizer
 
 
 def getInput():
@@ -25,9 +25,9 @@ result = summarizer.summarize(input['text'], input['title'], 'Undefined', 'Undef
 result = summarizer.sortScore(result)
 result = summarizer.sortSentences(result[:30])
 
-print 'Summary:'
+print('Summary:')
 
 for r in result:
-    print r['sentence']
-    # print r['totalScore']
-    # print r['order']
+    print(r['sentence'])
+    # print(r['totalScore'])
+    # print(r['order'])
