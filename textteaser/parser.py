@@ -25,7 +25,7 @@ class Parser:
 
     # Jagadeesh, J., Pingali, P., & Varma, V. (2005). Sentence Extraction Based Single Document Summarization. International Institute of Information Technology, Hyderabad, India, 5.
     def getSentencePositionScore(self, i, sentenceCount):
-        normalized = i / (sentenceCount * 1.0)
+        normalized = (i + 1) / (sentenceCount * 1.0)
 
         if normalized > 0 and normalized <= 0.1:
             return 0.17
