@@ -10,7 +10,7 @@ The original Scala TextTeaser can still be accessed [here](https://github.com/Mo
 ### Installation
 
     >>> git clone https://github.com/IndigoResearch/textteaser.git
-    >>> pip install -r textteaser/requirements.txt
+    >>> pip install -r textteaser/textteaser/requirements.txt
 
 ### How to Use
 
